@@ -1,14 +1,19 @@
 package br.edu.principal;
+
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
-		int capacidade = 2;
-		String [] nomes = new String[capacidade];
-        String celulares []  = new String[capacidade];
-        String emails []  = new String[capacidade];
+		//int capacidade = 2;
+		
+		List<String> nomes = new ArrayList<>();
+		List<String> celulares = new ArrayList<>();
+		List<String> emails = new ArrayList<>();
+
         int cont = 0;
         Scanner sc = new Scanner(System.in); 
         int opcao;
@@ -17,7 +22,7 @@ public class Principal {
         
 		System.out.println("==========================");
         System.out.println("     AGENDA DE CONTATOS    ");
-        System.out.println("          v0.1.0           ");
+        System.out.println("          v0.2.0           ");
         System.out.println("==========================");
 
         System.out.println("Bem-vindo!");
@@ -40,30 +45,30 @@ public class Principal {
     	        	System.out.println("\n--- ADICIONAR CONTATO ---");
 
     	            System.out.print("Nome: ");
-    	            nomes[cont] = sc.nextLine();
+    	            nomes.add(sc.nextLine());
 
     	            System.out.print("Celular: ");
-    	            celulares[cont] = sc.nextLine();
+    	            celulares.add(sc.nextLine());
 
     	            System.out.print("E-mail: ");
-    	            emails[cont] = sc.nextLine();
+    	            emails.add(sc.nextLine());
     	            
     	            cont++;
 
     	            System.out.println("Contato salvo com sucesso!");
 
     	        }
-    	        case 2 ->{
+    	        case 2 -> {
     	            System.out.println("Listar contato");
-    	            if(cont == 0) {
+    	            if(nomes.size() == 0) {
     	            	System.out.println("Nenhum contato encontrado!");
     	            }
     	            else {
-    	            	for(int i = 0; i < cont; i++) {
+    	            	for(int i = 0; i < nomes.size(); i++) {
     	                    System.out.println("\nContato " + (i + 1));
-    	                    System.out.println("Nome: " + nomes[i]);
-    	                    System.out.println("Celular: " + celulares[i]);
-    	                    System.out.println("E-mail: " + emails[i]);
+    	                    System.out.println("Nome: " + nomes.get(i));
+    	                    System.out.println("Celular: " + celulares.get(i));
+    	                    System.out.println("E-mail: " + emails.get(i));
     	                }
     	            }
     	        }
@@ -73,12 +78,12 @@ public class Principal {
     	            String nomeBusca = sc.nextLine();
     	            boolean encontrado = false;
 
-    	            for(int i = 0; i < cont; i++) {
-    	                if(nomes[i].equalsIgnoreCase(nomeBusca)) {
+    	            for(int i = 0; i < nomes.size(); i++) {
+    	                if(nomes.get(i).equalsIgnoreCase(nomeBusca)) {
     	                    System.out.println("Contato encontrado!");
-    	                    System.out.println("Nome: " + nomes[i]);
-    	                    System.out.println("Celular: " + celulares[i]);
-    	                    System.out.println("E-mail: " + emails[i]);
+    	                    System.out.println("Nome: " + nomes.get(i));
+    	                    System.out.println("Celular: " + celulares.get(i));
+    	                    System.out.println("E-mail: " + emails.get(i));
 
     	                    encontrado = true;
     	                }
@@ -97,7 +102,7 @@ public class Principal {
     	                String nomeExcluir = sc.nextLine();
     	                int indiceExcluir = -1;
     	                for(int i = 0; i < cont; i++) {
-    	                    if(nomes[i].equalsIgnoreCase(nomeExcluir)) {
+    	                    if(nomes.get(i).equalsIgnoreCase(nomeExcluir)) {
     	                        indiceExcluir = i;
     	                    }
     	                }
@@ -105,15 +110,12 @@ public class Principal {
     	                    System.out.println("Contato não encontrado.");
     	                }
     	                else {
-    	                    for(int i = indiceExcluir; i < cont - 1; i++) {
-    	                        nomes[i] = nomes[i + 1];
-    	                        celulares[i] = celulares[i + 1];
-    	                        emails[i] = emails[i + 1];
-    	                    }
-    	                    nomes[cont - 1] = null;
-    	                    celulares[cont - 1] = null;
-    	                    emails[cont - 1] = null;
+    	                	nomes.remove(indiceExcluir);
+    	                    celulares.remove(indiceExcluir);
+    	                    emails.remove(indiceExcluir);
+
     	                    cont--;
+
     	                    System.out.println("Contato excluído com sucesso!");
     	                }
     	            }
