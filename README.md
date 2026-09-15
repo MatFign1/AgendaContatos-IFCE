@@ -15,6 +15,7 @@ Construir uma Agenda de Contatos completa, iniciando com uma solução procedura
 | v0.0.0 | Variáveis simples | Permite armazenar apenas um contato |
 | v0.1.0 | Arrays | Permite vários contatos com capacidade fixa |
 | v0.2.0 | List + ArrayList | Permite vários contatos com tamanho dinâmico |
+| v0.3.0 | List + ArrayList | Adiciona a opção de alteração de contatos cadastrados |
 
 ### v0.0.0 — Programação Procedural Básica
 
@@ -52,27 +53,39 @@ Principais características:
 - busca sequencial nos arrays;
 - remoção de elementos com reorganização física do array (deslocamento de itens).
 
+### v0.2.0 — Armazenamento Dinâmico com ArrayList
+
+Terceira versão da Agenda.
+
+Principais características:
+
+- uso da API de Coleções do Java (`List` e `ArrayList`);
+- uso de Generics (`<String>`);
+- alocação e redimensionamento dinâmico;
+- métodos da API (`add`, `get`, `remove`, `size`, `indexOf`, etc.);
+- iteração com `for-each`;
+- simplificação das operações de inserção, busca e remoção.
+
 ## Versão atual
 
-**v0.2.0**
+**v0.3.0**
 
-Nesta versão, a Agenda de Contatos passou a utilizar a API de Coleções do Java (`List` e `ArrayList`) para o armazenamento dinâmico de contatos.
+Nesta versão, a Agenda de Contatos recebeu a implementação da funcionalidade de **alteração de contatos**.
 
-### Principais conceitos
+### Principais características e conceitos
 
-- Interface `List` e classe `ArrayList`
-- Generics (`<String>`)
-- Alocação e redimensionamento dinâmico
-- Métodos da API (`add`, `get`, `remove`, `size`, `indexOf`, etc.)
-- Iteração com `for-each`
-- Simplificação das operações de inserção, busca e remoção
+- Nova opção no menu: **Alterar contato**
+- Busca do contato a ser alterado
+- Atualização dos dados nas listas (`List` / `ArrayList`) utilizando o método `set()`
+- Reutilização da lógica de validação/busca para localização do registro antes da modificação
 
 ### Próximas versões
 
 O projeto continuará evoluindo.
 <!-- - `v0.1.0` — armazenamento com Arrays; -->
 <!-- - `v0.2.0` — armazenamento com List e ArrayList; -->
-- `v0.3.0` e posteriores — modularização, introdução de classes e objetos, encapsulamento, DAO, MVC, Swing, JDBC e banco de dados.
+<!-- - `v0.3.0` — funcionalidade de alterar contato; -->
+- `v0.4.0` e posteriores — modularização, introdução de classes e objetos, encapsulamento, DAO, MVC, Swing, JDBC e banco de dados.
 
 ## Controle de versões
 
@@ -84,3 +97,4 @@ Exemplo:
 v0.0.0
 v0.1.0
 v0.2.0
+v0.3.0
