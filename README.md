@@ -10,6 +10,12 @@ Construir uma Agenda de Contatos completa, iniciando com uma solução procedura
 
 ## Evolução do projeto
 
+| Versão | Armazenamento | Descrição |
+|---|---|---|
+| v0.0.0 | Variáveis simples | Permite armazenar apenas um contato |
+| v0.1.0 | Arrays | Permite vários contatos com capacidade fixa |
+| v0.2.0 | List + ArrayList | Permitirá vários contatos com tamanho dinâmico |
+
 ### v0.0.0 — Programação Procedural Básica
 
 Primeira versão da Agenda.
@@ -34,11 +40,26 @@ Principais características:
 
 Nesta versão, um novo contato substitui o contato armazenado anteriormente.
 
+## Versão atual
+
+**v0.1.0**
+
+Nesta versão, a Agenda de Contatos passou a utilizar arrays para armazenar vários contatos.
+
+### Principais conceitos
+
+- Arrays
+- Índices
+- Estrutura `for`
+- Controle de quantidade
+- Capacidade fixa
+- Pesquisa em arrays
+- Exclusão e reorganização dos elementos
+
 ### Próximas versões
 
 O projeto continuará evoluindo.
-
-- `v0.1.0` — armazenamento com Arrays;
+<!-- - `v0.1.0` — armazenamento com Arrays; -->
 - `v0.2.0` — armazenamento com List e ArrayList;
 - versões posteriores — modularização, classes, encapsulamento, DAO, MVC, Swing, JDBC e banco de dados.
 
